@@ -8,19 +8,38 @@ from pymongo import MongoClient
 import time
 
 def Index(request):
-    context = {'context':'context'}
-    return render(request, 'Olympic.html', context)
+	mongoClient = MongoClient('pr.db',27017)
+	#mongoClient = MongoClient('192.168.0.153',27017)
+	DBClient = mongoClient['olympicdb']
+	collection = DBClient['activitydata']
+	ActivityData=collection.find({})
+	ActivityList=[]
+	for item in ActivityData:
+		ActivityList.append(item)
+	context = {'ActivityList':ActivityList}
+	print(context)
+	return render(request, 'Olympic.html', context)
 
-def HsytYY1(request):
-    context = {'context':'context'}
-    return render(request, 'hstr-yy1.html', context)
-	
-def HsytNY1(request):
-    context = {'context':'context'}
-    return render(request, 'hstr-nongyao1.html', context)
+def Hstr(request):
+	title=request.GET.get('title')
+
+	mongoClient = MongoClient('pr.db',27017)
+	#mongoClient = MongoClient('192.168.0.153',27017)
+	DBClient = mongoClient['olympicdb']
+	collection = DBClient['activitydata']
+	ActivityData=collection.find_one({'title':title})
+	collection = DBClient['replydata']
+	result=collection.find({'title':title})
+	ReplyList=[]
+	for item in result:
+		ReplyList.append(item)
+	context = {'data':ActivityData,'ReplyList':ReplyList}
+	print(context)
+	return render(request, 'hstr.html', context)
 
 def LoadPreData(request):
 	mongoClient = MongoClient('pr.db',27017)
+	#mongoClient = MongoClient('192.168.0.153',27017)
 	DBClient = mongoClient['olympicdb']
 	collection = DBClient['predata']
 	result=collection.find({})
@@ -44,6 +63,7 @@ def LoadPreData(request):
 def LoadReply(request):
 	title=request.POST['title']
 	mongoClient = MongoClient('pr.db',27017)
+	#mongoClient = MongoClient('192.168.0.153',27017)
 	DBClient = mongoClient['olympicdb']
 	collection = DBClient['replydata']
 	result=collection.find({'title':title})
@@ -56,8 +76,6 @@ def LoadReply(request):
 	return HttpResponse(context)
 
 def Reply(request):
-
-	print("ok")
 	user=request.POST['username']
 	text=request.POST['text']
 	title=request.POST['title']
@@ -67,10 +85,10 @@ def Reply(request):
 		'text':text,
 		'title':title,
 	}
-
+	print(replyObj)
+	#mongoClient = MongoClient('192.168.0.153',27017)
 	mongoClient = MongoClient('pr.db',27017)
 	DBClient = mongoClient['olympicdb']
 	collection = DBClient['replydata']
-	result=conf.insert(replyObj)
-	print(result)
+	result=collection.insert(replyObj)
 	return HttpResponse("ok")

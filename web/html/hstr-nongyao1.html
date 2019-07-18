@@ -62,19 +62,15 @@
 			}
 			
 			function btn(){
-				
-				alert('ok');
 				username = $("#username").html();
 				text = $('#input-text').val()
 				title = $('#title').html()
-
+				title ='ny1'
 				dataObj={
 					'username':username,
 					'text':text,
 					'title':title
 				}
-				alert(dataObj);
-				
 				urlstr = "./Reply"
 				htmlobj=$.ajax({
 					type: 'POST',
@@ -83,7 +79,7 @@
 					data: dataObj,
 					success:
 						function(data) {
-							reloadReply()
+							document.location.reload();
 						}
 				});
 			}
@@ -150,7 +146,7 @@
 												<br />
 												<div class="row">
 													<div class="col-xs-12">
-														<h3 id="title">王者农药 第1场</h3>
+														<h3 id="title" value="ny1">王者农药 第1场</h3>
 														<p class="line-height-125">
 															2019-07-13 傍晚&夜晚
 															国花苑
@@ -181,7 +177,7 @@
 														{{item.text}}
 													</p>
 													<small>
-														{{item.username}}
+														{{item.user}}
 													</small>
 												</blockquote>
 												{% endfor %}	
@@ -224,8 +220,8 @@
 											</div>
 										</div>
 
-							</div><!-- /.col -->			
-						</div><!-- /.row -->	
+									</div><!-- /.col -->			
+								</div><!-- /.row -->	
 					</div><!-- /.page-content -->
 				</div>
 			</div><!-- /.main-content -->
