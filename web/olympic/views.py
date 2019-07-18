@@ -8,7 +8,7 @@ from pymongo import MongoClient
 import time
 
 def Index(request):
-	mongoClient = MongoClient('pr.db',27017)
+	mongoClient = MongoClient('research35.db',27017)
 	#mongoClient = MongoClient('192.168.0.153',27017)
 	DBClient = mongoClient['olympicdb']
 	collection = DBClient['activitydata']
@@ -23,7 +23,7 @@ def Index(request):
 def Hstr(request):
 	title=request.GET.get('title')
 
-	mongoClient = MongoClient('pr.db',27017)
+	mongoClient = MongoClient('research35.db',27017)
 	#mongoClient = MongoClient('192.168.0.153',27017)
 	DBClient = mongoClient['olympicdb']
 	collection = DBClient['activitydata']
@@ -38,7 +38,7 @@ def Hstr(request):
 	return render(request, 'hstr.html', context)
 
 def LoadPreData(request):
-	mongoClient = MongoClient('pr.db',27017)
+	mongoClient = MongoClient('research35.db',27017)
 	#mongoClient = MongoClient('192.168.0.153',27017)
 	DBClient = mongoClient['olympicdb']
 	collection = DBClient['predata']
@@ -62,7 +62,7 @@ def LoadPreData(request):
 
 def LoadReply(request):
 	title=request.POST['title']
-	mongoClient = MongoClient('pr.db',27017)
+	mongoClient = MongoClient('research35.db',27017)
 	#mongoClient = MongoClient('192.168.0.153',27017)
 	DBClient = mongoClient['olympicdb']
 	collection = DBClient['replydata']
@@ -87,7 +87,7 @@ def Reply(request):
 	}
 	print(replyObj)
 	#mongoClient = MongoClient('192.168.0.153',27017)
-	mongoClient = MongoClient('pr.db',27017)
+	mongoClient = MongoClient('research35.db',27017)
 	DBClient = mongoClient['olympicdb']
 	collection = DBClient['replydata']
 	result=collection.insert(replyObj)
