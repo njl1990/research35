@@ -25,7 +25,7 @@ SECRET_KEY = 'syoxsj0^4!jdwgo95n36%ft4%00+v=3^bf4u(*a4gg&x8ng8ot'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['server.natappfree.cc','127.0.0.1','0.0.0.0','39.104.57.12']
+ALLOWED_HOSTS = ['server.natappfree.cc','192.168.0.153','127.0.0.1','0.0.0.0','39.104.57.12']
 
 # Application definition
 
