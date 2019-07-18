@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta charset="utf-8" />
+		<title>Olympic</title>
+
+		<meta name="description" content="top menu &amp; navigation" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+		<!-- bootstrap & fontawesome 
+		<link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}" />
+		-->
+		<!-- csdn bootstrap -->
+		<link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+		
+		<link rel="stylesheet" href="{% static 'assets/font-awesome/4.5.0/css/font-awesome.min.css' %}" />
+
+		<!-- page specific plugin styles -->
+		<link rel="stylesheet" href="{% static 'assets/css/select2.min.css' %}" />
+
+		<!-- text fonts -->
+		<link rel="stylesheet" href="{% static 'assets/css/fonts.googleapis.com.css' %}" />
+
+		<!-- ace styles -->
+		<link rel="stylesheet" href="{% static 'assets/css/ace.min.css' %}" class="ace-main-stylesheet" id="main-ace-style" />
+
+		<!--[if lte IE 9]>
+			<link rel="stylesheet" href="assets/css/ace-part2.min.css" class="ace-main-stylesheet" />
+		<![endif]-->
+		<link rel="stylesheet" href="{% static 'assets/css/ace-skins.min.css' %}" />
+		<link rel="stylesheet" href="{% static 'assets/css/ace-rtl.min.css' %}" />
+
+		<!--[if lte IE 9]>
+		  <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
+		<![endif]-->
+
+		<!-- inline styles related to this page -->
+
+		<!-- ace settings handler -->
+		<script src="{% static 'assets/js/ace-extra.min.js' %}"></script>
+		<script src="{% static 'assets/js/echarts.min.js' %}"></script>
+				
+		<!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
+
+		<!--[if lte IE 8]>
+		<script src="assets/js/html5shiv.min.js"></script>
+		<script src="assets/js/respond.min.js"></script>
+		<![endif]-->
+	</head>
+
+	<body class="no-skin">
+		<div id="navbar" class="navbar navbar-default    navbar-collapse       h-navbar ace-save-state">
+			<div class="navbar-container ace-save-state" id="navbar-container">
+				<div class="navbar-header pull-left">
+					<a href="index" class="navbar-brand">
+						<small>
+							<i class="fa fa-leaf"></i>
+							Olympic 
+						</small>
+					</a>
+				</div>
+
+				
+			</div><!-- /.navbar-container -->
+		</div>
+
+		<div class="main-container ace-save-state" id="main-container">
+			<div class="main-content">
+				<div class="main-content-inner">
+					<div class="page-content">
+						<div class="page-header">
+							<h1>
+								第一届"三五"运动会
+							</h1>
+						</div><!-- /.page-header -->
+
+						<div class="row">
+							<div class="col-xs-12">
+								<div class="col-sm-4">
+									<div class="widget-box">
+										<div class="widget-header widget-header-flat">
+											<h4 class="widget-title smaller">
+												<i class="ace-icon fa fa-quote-left smaller-80"></i>
+												活动预告
+											</h4>
+										</div>
+
+										<div class="widget-body">
+											<div class="widget-main">										
+												<div class="row">
+													<div class="col-xs-12">
+													<img width="100%" height="100%" alt="150x150" src="{% static 'assets/images/olympic/maomaoqiu300.jpg' %}" />
+													</div>
+												</div>
+												<br />
+												<div class="row">
+													<div class="col-xs-12">
+														
+														<blockquote>
+															<h3>抽毛毛球</h3>
+															<p class="line-height-125">
+																2019-07-21 11:00~12:00
+															</p>
+															<p class="line-height-125">
+																男单、女单、混双
+															</p>
+															<small>
+																广州某毛毛球馆
+															</small>
+														</blockquote>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-8">
+									<div class="widget-box">
+										<div class="widget-header widget-header-flat">
+											<h4 class="widget-title smaller">
+												<i class="ace-icon fa fa-quote-left smaller-80"></i>
+												运动龙虎榜
+											</h4>
+										</div>
+
+										<div class="widget-body">
+											<div class="widget-main">
+												<div class="row">
+													<div class="col-xs-12">
+														
+														
+														<table id="simple-table" class="table  table-bordered table-hover">
+															<thead>
+																<tr>
+																	<th class="center">
+																		<label class="pos-rel">
+																			<span class="lbl"></span>
+																		</label>
+																	</th>
+																	<th class="detail-col">运动员</th>
+																	<th>金牌</th>
+																	<th>银牌</th>
+																	<th>铜牌</th>
+																	<th>
+																		<i class="ace-icon fa fa-clock-o bigger-110 hidden-480"></i>
+																		奖牌
+																	</th>
+																</tr>
+															</thead>
+
+															<tbody>
+																<tr>
+																	<td class="center">
+																		<label class="pos-rel">
+																			1st
+																		</label>
+																	</td>
+
+																	<td class="center">
+																		UUOxford
+																	</td>
+																	<td>
+																		0
+																	</td>
+																	<td>0</td>
+																	<td>0</td>
+																	<td>0</td>
+																</tr>
+																<tr>
+																	<td class="center">
+																		<label class="pos-rel">
+																			2nd
+																		</label>
+																	</td>
+
+																	<td class="center">
+																		Bowen
+																	</td>
+																	<td>
+																		0
+																	</td>
+																	<td>0</td>
+																	<td>0</td>
+																	<td>0</td>
+																</tr>
+																<tr>
+																	<td class="center">
+																		<label class="pos-rel">
+																			3rd
+																		</label>
+																	</td>
+
+																	<td class="center">
+																		Zenobia
+																	</td>
+																	<td>
+																		0
+																	</td>
+																	<td>0</td>
+																	<td>0</td>
+																	<td>0</td>
+																</tr>
+																<tr>
+																	<td class="center">
+																		<label class="pos-rel">
+																			4th
+																		</label>
+																	</td>
+
+																	<td class="center">
+																		xx
+																	</td>
+																	<td>
+																		0
+																	</td>
+																	<td>0</td>
+																	<td>0</td>
+																	<td>0</td>
+																</tr>
+															</tbody>
+														</table>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-xs-12">
+									<div class="widget-box">
+										<div class="widget-header widget-header-flat">
+											<h4 class="widget-title smaller">
+												<i class="ace-icon fa fa-quote-left smaller-80"></i>
+												往期故事
+											</h4>
+										</div>
+
+										<div class="widget-body">
+											<div class="widget-main">										
+												<div class="row">											
+													<div class="col-sm-12">
+														<ul class="ace-thumbnails clearfix">
+															<li>
+																<a href="./hstr-nongyao1" title="游泳" data-rel="colorbox">
+																	<img width="150" height="150" alt="150x150" src="{% static 'assets/images/olympic/nongyao.jpg' %}" />
+																</a>
+																<div class="tags">
+																	<span class="label-holder">
+																		<span class="label label-info">王者农药</span>
+																	</span>
+
+																	<span class="label-holder">
+																		<span class="label label-danger">第1场</span>
+																	</span>
+
+																	<span class="label-holder">
+																		<span class="label label-success">2019-07-13</span>
+																	</span>
+																</div>
+															</li>
+															<li>
+																<a href="./hstr-yy1" title="游泳" data-rel="colorbox">
+																	<img width="150" height="150" alt="150x150" src="{% static 'assets/images/olympic/swim150.png' %}" />
+																</a>
+																<div class="tags">
+																	<span class="label-holder">
+																		<span class="label label-info">游泳</span>
+																	</span>
+
+																	<span class="label-holder">
+																		<span class="label label-danger">第1场</span>
+																	</span>
+
+																	<span class="label-holder">
+																		<span class="label label-success">2019-07-06</span>
+																	</span>
+																</div>
+															</li>
+														</ul>
+													</div>										
+												</div>
+												
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div><!-- /.row -->
+						
+					</div><!-- /.page-content -->
+				</div>
+			</div><!-- /.main-content -->
+
+			<div class="footer">
+				<div class="footer-inner">
+					<div class="footer-content">
+						<span class="bigger-120">
+							<span class="blue bolder">Bowen Nan</span>
+							pr &copy; 2019
+						</span>
+
+						&nbsp; &nbsp;
+					</div>
+				</div>
+			</div>
+
+			<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+				<i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+			</a>
+		</div><!-- /.main-container -->
+
+		<!-- basic scripts -->
+
+		<!--[if !IE]> -->
+		<script src="assets/js/jquery-2.1.4.min.js"></script>
+
+		<!-- <![endif]-->
+
+		<!--[if IE]>
+		<script src="assets/js/jquery-1.11.3.min.js"></script>
+		<![endif]-->
+		<script type="text/javascript">
+			if('ontouchstart' in document.documentElement) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+		</script>
+		<script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+		<!-- page specific plugin scripts -->
+
+		<!-- ace scripts -->
+		<script src="{% static 'assets/js/ace-elements.min.js' %}"></script>
+		<script src="{% static 'assets/js/ace.min.js' %}"></script>
+		<!-- inline scripts related to this page -->
+
+	</body>
+</html>
