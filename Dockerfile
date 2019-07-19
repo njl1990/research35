@@ -1,5 +1,6 @@
 FROM 1stclass/docker-python3-django2-alpine-base
 MAINTAINER bowen
+RUN ["apt","install","python-dev"]
 RUN ["pip","install","-i","http://mirrors.aliyun.com/pypi/simple/","--trusted-host","mirrors.aliyun.com","--upgrade","pip"]
 RUN ["pip","install","-i","http://mirrors.aliyun.com/pypi/simple/","--trusted-host","mirrors.aliyun.com","pymongo"]
 RUN ["pip","install","-i","http://mirrors.aliyun.com/pypi/simple/","--trusted-host","mirrors.aliyun.com","django-extensions"]
