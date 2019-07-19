@@ -65,6 +65,12 @@
 				username = $("#username").html();
 				text = $('#input-text').val();
 				title = $('#activityname').attr('title');
+				
+				if(username==''){
+					alert('请选择用户');
+					return;
+				}
+				
 				dataObj={
 					'username':username,
 					'text':text,
