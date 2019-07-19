@@ -8,4 +8,4 @@ RUN ["pip","install","-i","http://mirrors.aliyun.com/pypi/simple/","--trusted-ho
 RUN ["pip","install","-i","http://mirrors.aliyun.com/pypi/simple/","--trusted-host","mirrors.aliyun.com","pymongo"]
 RUN ["pip","install","-i","http://mirrors.aliyun.com/pypi/simple/","--trusted-host","mirrors.aliyun.com","django-extensions"]
 RUN ["pip","install","-i","http://mirrors.aliyun.com/pypi/simple/","--trusted-host","mirrors.aliyun.com","django-werkzeug-debugger-runserver"]
-RUN ["pip","install","-i","http://mirrors.aliyun.com/pypi/simple/","--trusted-host","mirrors.aliyun.com","pyOpenSSL"]
+RUN ["pip","install","pyOpenSSL"]
